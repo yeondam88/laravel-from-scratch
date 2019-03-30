@@ -1,7 +1,7 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
+--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -11,22 +11,8 @@
 |
  */
 
-Route::get('/', function () {
-    $tasks = [
-        "Go to the store",
-        "Go to the market",
-        "Go to work",
-    ];
+Route::get('/', 'PageController@index');
 
-    return view('welcome', [
-        'tasks' => $tasks,
-    ]);
-});
+Route::get('/about', 'PageController@about');
 
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', 'PageController@contact');
